@@ -6,6 +6,10 @@ function isValidShift(hours) {
 
 function calculatePay(hours, rate) {
 
+  if (hours < 0) {
+    return 0;
+  }
+
   if (hours > 8) {
     return Math.round((8 * rate) + ((hours - 8) * rate * 1.5));
   }
